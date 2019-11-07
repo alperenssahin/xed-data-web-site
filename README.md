@@ -1,4 +1,4 @@
-#XedData
+#XedData Web Site
 
 ## Available Scripts
 In the project directory, you can run:
@@ -12,45 +12,41 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 
-##Structure
+# Structure
 You have to respect xed-data development environment structure and dev-rules that are considered at below.
 
-####Concept
-XedData uses xed-frameworks and libraries on all of
-products. You should include in your project this source code from github or
-similar version control system provider.
+## Concept
 
-
-Web framework provide us **inputs**,**buttons** etc. Learn more [https://github.com]()
-
-
-**Web framework installation:**
-#### `npm install xed-web-frameworks`
-
-
-
-####File-Naming and Source Path
-
-- javascript codes and class files location : `/src/classes`
-- css files location : `/src/style`
+### File-Naming and Source Path
+Files must be located at below:
+- javascript codes and class files  : `/src/classes`
+- css files  : `/src/style`
 - images and symbols : `/public/img`
 
-Bir js dosyasi yalnizca bir tane class icerebilir, dosya adlandirmasi
-`{class-name}.js` seklinde yapilir. Or: `header-content.js`
+Jsx scripts can include only one class, files should be named as
+`{class-name}.js` 
 
-Js kaynak kodunun icindeki her bir html dugumunun style kodlari js kaynak kod dosyasi
-ile ayi adla isimlendirilmis css dosyasinin icerisine yazilimalidir. Or:`header-content.css`
+Ex: `header-content.js`
 
-####Code Standard
+Style of every html element should be declared in a css file that have same name with jsx file.
 
-**JavaScript**
+Ex:`header-content.css`
 
-- Her js kaynak kodu kullanilan kutuphanelerin ice aktarilmasi ile baslar
-- class isimleri buyuk harf ile baslar, eger class iki kelimeden olusuyorsa ikinci kelime
-buyuk harfle bitisik yazilir or: `class HeaderContent extends React.Component`
-- html kodu icerisinde kullanilacak degiskenler ya da elementlerin style bilgileri constructure icerisinde react
-kutuphanesinde on tanimli state degiskenine atanir atama islemi asagidaki sekilde yapilir
-    
+### Code Standard
+
+#### **JavaScript**
+
+- Every jsx code begins with including other source
+
+        import {HeaderContent} from './src/classes/header-content.js'
+        
+- class names begins uppercase, if class have two or more words, other words begins uppercase without space 
+
+        export class HeaderContent extends React.Component
+        
+- You should define a 'state' variable(predefined in react) with  content of elements or styles at constructor    
+  
+  
         constructor(props){
             super(props);
             this.state = {
@@ -63,13 +59,14 @@ kutuphanesinde on tanimli state degiskenine atanir atama islemi asagidaki sekild
             }
         }
 
-- html dugumleri indexlenirken submit ve input islemleri haricinde id parametresi kullanilmaz.
-her bir html dugumu bulundugu kaynak kodun adini ve gorevini className olarak alir.
-
+- Indexing of html elements haven't id attribute if this element have not an attached
+ function. You must give a class name pair for indexing this elements.
+ 
+ 
         <div className={`class-name` `specification`}>{this.state.element_name.content}</div>
         
-- her bir class doyasinin render fonksiyonu container ve inside dugumlerini icermelidir.
-**html** kodu bu dugumlerin icine yazilmalidir.
+- Every render function should be had html nodes at below
+
         
         render(){
             return(
@@ -81,9 +78,11 @@ her bir html dugumu bulundugu kaynak kodun adini ve gorevini className olarak al
             );
         }
 
-**Css**
+#### **Css**
 
-- css doyalri icerisinden elemntlerin stylarini degistirirken html dugumlerine verdigimiz className parametresine gore indexleme yapariz
+- You should define styles by using class name pair at css files.
+
+
 
         .class-name.specification{
             color:red;
