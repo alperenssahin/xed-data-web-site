@@ -1,4 +1,4 @@
-#XedData Web Site
+# XedData Web Site
 
 ## Available Scripts
 In the project directory, you can run:
@@ -20,7 +20,9 @@ You have to respect xed-data development environment structure and dev-rules tha
 ## Concept
 
 ### File-Naming and Source Path
-Files must be located at below:
+
+Files must be located at below directories:
+
 - javascript codes and class files  : `/src/classes`
 - css files  : `/src/style`
 - images and symbols : `/public/img`
@@ -30,7 +32,7 @@ Jsx scripts can include only one class, files should be named as
 
 Ex: `header-content.js`
 
-Style of every html element should be declared in a css file that have same name with jsx file.
+Style of every html element should be declared in a css file that has the same name with jsx file.
 
 Ex:`header-content.css`
 
@@ -38,15 +40,15 @@ Ex:`header-content.css`
 
 #### **JavaScript**
 
-- Every jsx code begins with including other source
+- Every jsx code begins with including of other sources.
 
         import {HeaderContent} from './src/classes/header-content.js'
         
-- class names begins uppercase, if class have two or more words, other words begins uppercase without space 
+- First letter of a class name should be in uppercase, if the class has two or more words, other words begin with an uppercase letter without space. 
 
         export class HeaderContent extends React.Component
         
-- You should define a 'state' variable(predefined in react) with  content of elements or styles at constructor    
+- You should define a 'state' variable (which is predefined in react) with its elements and styles at constructor.   
   
   
         constructor(props){
@@ -61,13 +63,13 @@ Ex:`header-content.css`
             }
         }
 
-- Indexing of html elements haven't id attribute if this element have not an attached
- function. You must give a class name pair for indexing this elements.
+- Indexing of html elements doesn't have id attribute if this element doesn't have an attached
+ function. You must give the class name as a pair for indexing these elements.
  
  
         <div className={`class-name` `specification`}>{this.state.element_name.content}</div>
         
-- Every render function should be had html nodes at below
+- Every render function should be given the specified html nodes at below.
 
         
         render(){
@@ -82,7 +84,7 @@ Ex:`header-content.css`
 
 #### **Css**
 
-- You should define styles by using class name pair at css files.
+- You should define styles at css files by using class name pairs.
 
 
 
